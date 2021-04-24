@@ -18,10 +18,6 @@ namespace HBCaseStudy.MarsRover
                 .AddSingleton<ILoggingService, LoggingService>()
                 .AddSingleton<IRoverService, RoverService>()
                 .AddSingleton<IMarsFactory, MarsFactory>()
-
-                //.AddSingleton<IOperationStrategy, RoverRotateLeft>()
-                //.AddSingleton<IOperationStrategy, RoverRotateRight>()
-                //.AddSingleton<IOperationStrategy, RoverMoveForward>()
                 .BuildServiceProvider();
         }
     }

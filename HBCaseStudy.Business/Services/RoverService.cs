@@ -77,7 +77,7 @@ namespace HBCaseStudy.Business.Services
                 }
             );
 
-        private bool CheckAreaPosition(IEnumerable<int> plateauArea, Rover rover)
+        private static bool CheckAreaPosition(IEnumerable<int> plateauArea, Rover rover)
         {
             return rover.Horizontal < 0
                 || rover.Horizontal > plateauArea.ElementAt(0)
