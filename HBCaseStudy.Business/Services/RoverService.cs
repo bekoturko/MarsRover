@@ -32,7 +32,7 @@ namespace HBCaseStudy.Business.Services
 
             var rover = marsFactory.CreateRover(roverName, startPointHorizontal, startPointVertical, startDirection);
 
-            StartProcessLog(roverName, startPointHorizontal, startPointVertical, startDirection, destinationCommands);
+            BeginProcessLog(roverName, startPointHorizontal, startPointVertical, startDirection, destinationCommands);
 
             StartRuningRoboticRover(plateauArea, destinationCommands, rover);
 
@@ -56,6 +56,16 @@ namespace HBCaseStudy.Business.Services
             }
         }
 
+        private static bool CheckAreaPosition(IEnumerable<int> plateauArea, Rover rover)
+        {
+            return rover.Horizontal < 0
+                || rover.Horizontal > plateauArea.ElementAt(0)
+                || rover.Vertical < 0
+                || rover.Vertical > plateauArea.ElementAt(1);
+        }
+
+        #region operation strategy
+
         private IOperationStrategy roverStrategy;
 
         private IOperationStrategy CreateOperationStrategy(Enum movementEnum)
@@ -77,17 +87,11 @@ namespace HBCaseStudy.Business.Services
                 }
             );
 
-        private static bool CheckAreaPosition(IEnumerable<int> plateauArea, Rover rover)
-        {
-            return rover.Horizontal < 0
-                || rover.Horizontal > plateauArea.ElementAt(0)
-                || rover.Vertical < 0
-                || rover.Vertical > plateauArea.ElementAt(1);
-        }
+        #endregion
 
         #region log helper
 
-        private void StartProcessLog(string roverName, int startPointHorizontal, int startPointVertical, string startDirection, string commands)
+        private void BeginProcessLog(string roverName, int startPointHorizontal, int startPointVertical, string startDirection, string commands)
         {
             var message = $"{roverName} tour start. Location: {startPointHorizontal} {startPointVertical} {startDirection}. Commands: {commands} \n";
 
