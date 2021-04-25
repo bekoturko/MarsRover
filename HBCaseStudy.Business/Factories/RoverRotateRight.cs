@@ -11,19 +11,19 @@ namespace HBCaseStudy.Business.Factories
             switch (rover.Direction)
             {
                 case Direction.N:
-                    rover.Direction = Direction.E;
+                    rover.SetDirectionEast();
                     break;
 
                 case Direction.S:
-                    rover.Direction = Direction.W;
+                    rover.SetDirectionWest();
                     break;
 
                 case Direction.E:
-                    rover.Direction = Direction.S;
+                    rover.SetDirectionSouth();
                     break;
 
                 case Direction.W:
-                    rover.Direction = Direction.N;
+                    rover.SetDirectionNorth();
                     break;
 
                 default:

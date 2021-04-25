@@ -11,19 +11,19 @@ namespace HBCaseStudy.Business.Factories
             switch (rover.Direction)
             {
                 case Direction.N:
-                    rover.Vertical += 1;
+                    rover.SetVerticalIncrease();
                     break;
 
                 case Direction.S:
-                    rover.Vertical -= 1;
+                    rover.SetVerticalDecrease();
                     break;
 
                 case Direction.E:
-                    rover.Horizontal += 1;
+                    rover.SetHorizontalIncrease();
                     break;
 
                 case Direction.W:
-                    rover.Horizontal -= 1;
+                    rover.SetHorizontalDecrease();
                     break;
 
                 default:

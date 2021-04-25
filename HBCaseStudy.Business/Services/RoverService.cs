@@ -69,11 +69,11 @@ namespace HBCaseStudy.Business.Services
         }
 
         private readonly Lazy<Dictionary<Enum, Func<IOperationStrategy>>> roverOperations = new Lazy<Dictionary<Enum, Func<IOperationStrategy>>>(() =>
-                new Dictionary<Enum, Func<IOperationStrategy>>()
+                new Dictionary<Enum, Func<IOperationStrategy>>
                 {
-                    { Movement.L,  () => { return new RoverRotateLeft(); } },
-                    { Movement.R,  () => { return new RoverRotateRight(); } },
-                    { Movement.M,  () => { return new RoverMoveForward(); } }
+                    { Movement.L, () => { return new RoverRotateLeft(); } },
+                    { Movement.R, () => { return new RoverRotateRight(); } },
+                    { Movement.M, () => { return new RoverMoveForward(); } }
                 }
             );
 

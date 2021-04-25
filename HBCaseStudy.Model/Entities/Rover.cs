@@ -21,6 +21,46 @@
 
         public string LocationInfo => $"{Horizontal} {Vertical} {Direction}";
 
+        public void SetDirectionNorth()
+        {
+            Direction = Direction.N;
+        }
+
+        public void SetDirectionSouth()
+        {
+            Direction = Direction.S;
+        }
+
+        public void SetDirectionEast()
+        {
+            Direction = Direction.E;
+        }
+
+        public void SetDirectionWest()
+        {
+            Direction = Direction.W;
+        }
+
+        public void SetVerticalIncrease()
+        {
+            Vertical += 1;
+        }
+
+        public void SetVerticalDecrease()
+        {
+            Vertical -= 1;
+        }
+
+        public void SetHorizontalIncrease()
+        {
+            Horizontal += 1;
+        }
+
+        public void SetHorizontalDecrease()
+        {
+            Horizontal -= 1;
+        }
+
         #endregion
     }
 }
